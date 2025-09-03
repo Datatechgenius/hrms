@@ -22,6 +22,7 @@ using HRMS.Infrastructure.Interfaces.Designations;
 using HRMS.Infrastructure.Interfaces.Divisions;
 using HRMS.Infrastructure.Interfaces.Employee;
 using HRMS.Infrastructure.Interfaces.HelpDesk;
+using HRMS.Infrastructure.Interfaces.HelpDeskComments;
 using HRMS.Infrastructure.Interfaces.JobTitle;
 using HRMS.Infrastructure.Interfaces.Leave;
 using HRMS.Infrastructure.Interfaces.Location;
@@ -44,6 +45,7 @@ using HRMS.Infrastructure.Repositories.Designations;
 using HRMS.Infrastructure.Repositories.Divisions;
 using HRMS.Infrastructure.Repositories.Employee;
 using HRMS.Infrastructure.Repositories.HelpDesk;
+using HRMS.Infrastructure.Repositories.HelpDeskComments;
 using HRMS.Infrastructure.Repositories.JobTitle;
 using HRMS.Infrastructure.Repositories.Location;
 using HRMS.Infrastructure.Repositories.Payroll;
@@ -104,6 +106,7 @@ builder.Services.AddScoped<IPayrollWagesRepository>(sp => new PayrollWagesReposi
 builder.Services.AddScoped<IPayrollDeductionRepository>(sp => new PayrollDeductionRepository(connStr));
 builder.Services.AddScoped<IPayslipHistoryRepository>(sp => new PayslipHistoryRepository(connStr));
 builder.Services.AddScoped<IHelpdeskTicketRepository>(sp => new HelpdeskTicketRepository(connStr));
+builder.Services.AddScoped<IHelpDeskCommentsRepository>(sp => new HelpDeskCommentsRepository(connStr));
 
 
 

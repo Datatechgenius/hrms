@@ -118,6 +118,8 @@
     <Compile Include="CommandHandlers\Contingent\CreateContingentCommandHandler.cs" />
     <Compile Include="CommandHandlers\Contingent\DeleteContingentCommandHandler.cs" />
     <Compile Include="CommandHandlers\Contingent\UpdateContingentCommandHandler.cs" />
+    <Compile Include="CommandHandlers\HelpDeskComments\CreateHelpDeskCommentCommandHandler.cs" />
+    <Compile Include="CommandHandlers\HelpDeskComments\DeleteHelpDeskCommentCommandHandler.cs" />
     <Compile Include="CommandHandlers\HelpDesk\CreateHelpdeskTicketCommandHandler.cs" />
     <Compile Include="CommandHandlers\HelpDesk\DeleteHelpdeskTicketCommandHandler.cs" />
     <Compile Include="CommandHandlers\HelpDesk\UpdateHelpdeskTicketCommandHandler.cs" />
@@ -199,6 +201,8 @@
     <Compile Include="Commands\Contingent\CreateContingentCommand.cs" />
     <Compile Include="Commands\Contingent\DeleteContingentCommand.cs" />
     <Compile Include="Commands\Contingent\UpdateContingentCommand.cs" />
+    <Compile Include="Commands\HelpDeskComments\CreateHelpDeskCommentCommand.cs" />
+    <Compile Include="Commands\HelpDeskComments\DeleteHelpDeskCommentCommand.cs" />
     <Compile Include="Commands\HelpDesk\CreateHelpdeskTicketCommand.cs" />
     <Compile Include="Commands\HelpDesk\DeleteHelpdeskTicketCommand.cs" />
     <Compile Include="Commands\HelpDesk\UpdateHelpdeskTicketCommand.cs" />
@@ -299,6 +303,8 @@
     <Compile Include="Queries\Employee\Employee\GetAllEmployeeByDivisionQuery.cs" />
     <Compile Include="Queries\Employee\Employee\GetAllEmployeeByOrgnizationQuery.cs" />
     <Compile Include="Queries\Employee\Employee\GetEmployeeByIdQuery.cs" />
+    <Compile Include="Queries\HelpDeskComments\GetAllCommentsByTicketIdQuery.cs" />
+    <Compile Include="Queries\HelpDeskComments\GetTicketCommentByIdQuery.cs" />
     <Compile Include="Queries\HelpDesk\GetAllHelpdeskTicketByEmpIdQuery.cs" />
     <Compile Include="Queries\HelpDesk\GetAllHelpdeskTicketByOrgIdQuery.cs" />
     <Compile Include="Queries\HelpDesk\GetHelpdeskTicketByIdQuery.cs" />
@@ -359,6 +365,8 @@
     <Compile Include="QueryHandlers\Employee\Employee\GetEmployeeByIdQueryHandler.cs" />
     <Compile Include="QueryHandlers\Employee\Employeeaddresses\GetEmployeeIdByAddressesQueryHandler.cs" />
     <Compile Include="Queries\Location\GetAllLocationsByDivIdQuery.cs" />
+    <Compile Include="QueryHandlers\HelpDeskComments\GetAllCommentsByTicketIdQueryHandler.cs" />
+    <Compile Include="QueryHandlers\HelpDeskComments\GetTicketCommentByIdQueryHandler.cs" />
     <Compile Include="QueryHandlers\HelpDesk\GetAllHelpdeskTicketByEmpIdQueryHandler.cs" />
     <Compile Include="QueryHandlers\HelpDesk\GetAllHelpdeskTicketByOrgIdQueryHandler.cs" />
     <Compile Include="QueryHandlers\HelpDesk\GetHelpdeskTicketByIdQueryHandler.cs" />
@@ -411,11 +419,6 @@
     <None Include="app.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="CommandHandlers\HelpDeskComments\" />
-    <Folder Include="Commands\HelpDeskComments\" />
-    <Folder Include="Queries\HelpDeskComments\" />
-    <Folder Include="QueryHandlers\HelpDeskComments\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

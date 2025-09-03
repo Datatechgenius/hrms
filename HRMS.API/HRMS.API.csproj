@@ -17,8 +17,4 @@
     <ProjectReference Include="..\HRMS.Application\HRMS.Application.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Controllers\HelpDeskComments\" />
-  </ItemGroup>
-
 </Project>
