@@ -1,0 +1,421 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{4C8A15D3-BF03-4693-B27E-12ED9F97E114}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>HRMS.Application</RootNamespace>
+    <AssemblyName>HRMS.Application</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MediatR, Version=13.0.0.0, Culture=neutral, PublicKeyToken=bb9a41a5e8aaa7e2, processorArchitecture=MSIL">
+      <HintPath>..\packages\MediatR.13.0.0\lib\netstandard2.0\MediatR.dll</HintPath>
+    </Reference>
+    <Reference Include="MediatR.Contracts, Version=2.0.1.0, Culture=neutral, PublicKeyToken=bb9a41a5e8aaa7e2, processorArchitecture=MSIL">
+      <HintPath>..\packages\MediatR.Contracts.2.0.1\lib\netstandard2.0\MediatR.Contracts.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=8.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.8.0.0\lib\net462\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.DependencyInjection, Version=8.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.DependencyInjection.8.0.0\lib\net462\Microsoft.Extensions.DependencyInjection.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.DependencyInjection.Abstractions, Version=8.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.DependencyInjection.Abstractions.8.0.0\lib\net462\Microsoft.Extensions.DependencyInjection.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Logging, Version=8.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Logging.8.0.0\lib\net462\Microsoft.Extensions.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Logging.Abstractions, Version=8.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Logging.Abstractions.8.0.0\lib\net462\Microsoft.Extensions.Logging.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Options, Version=8.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Options.8.0.0\lib\net462\Microsoft.Extensions.Options.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Primitives, Version=8.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Primitives.8.0.0\lib\net462\Microsoft.Extensions.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Abstractions, Version=8.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IdentityModel.Abstractions.8.0.1\lib\net472\Microsoft.IdentityModel.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.JsonWebTokens, Version=8.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IdentityModel.JsonWebTokens.8.0.1\lib\net472\Microsoft.IdentityModel.JsonWebTokens.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Logging, Version=8.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IdentityModel.Logging.8.0.1\lib\net472\Microsoft.IdentityModel.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Tokens, Version=8.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IdentityModel.Tokens.8.0.1\lib\net472\Microsoft.IdentityModel.Tokens.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Diagnostics.DiagnosticSource, Version=8.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Diagnostics.DiagnosticSource.8.0.0\lib\net462\System.Diagnostics.DiagnosticSource.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Memory, Version=4.0.1.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.5\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.6.0.0\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Encodings.Web, Version=8.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Encodings.Web.8.0.0\lib\net462\System.Text.Encodings.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Json, Version=8.0.0.4, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Json.8.0.4\lib\net462\System.Text.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CommandHandlers\Attendance\CreateAttendanceCommandHandler.cs" />
+    <Compile Include="CommandHandlers\Attendance\DeleteAttendanceCommandHandler.cs" />
+    <Compile Include="CommandHandlers\Attendance\UpdateAttendanceCommandHandler.cs" />
+    <Compile Include="CommandHandlers\Company\CreateCompanyCommandHandler.cs" />
+    <Compile Include="CommandHandlers\Company\DeleteCompanyCommandHandler.cs" />
+    <Compile Include="CommandHandlers\Company\UpdateCompanyCommandHandler.cs" />
+    <Compile Include="CommandHandlers\Contingent\CreateContingentCommandHandler.cs" />
+    <Compile Include="CommandHandlers\Contingent\DeleteContingentCommandHandler.cs" />
+    <Compile Include="CommandHandlers\Contingent\UpdateContingentCommandHandler.cs" />
+    <Compile Include="CommandHandlers\HelpDesk\CreateHelpdeskTicketCommandHandler.cs" />
+    <Compile Include="CommandHandlers\HelpDesk\DeleteHelpdeskTicketCommandHandler.cs" />
+    <Compile Include="CommandHandlers\HelpDesk\UpdateHelpdeskTicketCommandHandler.cs" />
+    <Compile Include="CommandHandlers\PayrollDeduction\CreatePayrollDeductionCommandHandler.cs" />
+    <Compile Include="CommandHandlers\PayrollDeduction\DeletePayrollDeductionCommandHandler.cs" />
+    <Compile Include="CommandHandlers\PayrollDeduction\UpdatePayrollDeductionCommandHandler.cs" />
+    <Compile Include="CommandHandlers\PayrollWages\CreatePayrollWagesCommandHandler.cs" />
+    <Compile Include="CommandHandlers\PayrollWages\DeletePayrollWagesCommandHandler.cs" />
+    <Compile Include="CommandHandlers\PayrollWages\UpdatePayrollWagesCommandHandler.cs" />
+    <Compile Include="CommandHandlers\Payroll\CreatePayrollCommandHandler.cs" />
+    <Compile Include="CommandHandlers\Payroll\DeletePayrollCommandHandler.cs" />
+    <Compile Include="CommandHandlers\Payroll\UpdatePayrollCommandHandler.cs" />
+    <Compile Include="CommandHandlers\PayslipHistory\CreatePayslipHistoryCommandHandler.cs" />
+    <Compile Include="CommandHandlers\PayslipHistory\DeletePayslipHistoryCommandHandler.cs" />
+    <Compile Include="CommandHandlers\PayslipHistory\UpdatePayslipHistoryCommandHandler.cs" />
+    <Compile Include="CommandHandlers\RolePermission\CreateRolePermissionCommandHandler.cs" />
+    <Compile Include="CommandHandlers\RolePermission\DeleteRolePermissionCommandHandler.cs" />
+    <Compile Include="CommandHandlers\RolePermission\UpdateRolePermissionCommandHandler.cs" />
+    <Compile Include="CommandHandlers\Roles\CreateRoleCommandHandler.cs" />
+    <Compile Include="CommandHandlers\Roles\DeleteRoleCommandHandler.cs" />
+    <Compile Include="CommandHandlers\Roles\UpdateRoleCommandHandler.cs" />
+    <Compile Include="CommandHandlers\Timesheet\CreateTimesheetCommandHandler.cs" />
+    <Compile Include="CommandHandlers\Departments\CreateDepartmentCommandHandler.cs" />
+    <Compile Include="CommandHandlers\Departments\DeleteDepertmentCommandHandler.cs" />
+    <Compile Include="CommandHandlers\Departments\UpdateDepartmentCommandHandler.cs" />
+    <Compile Include="CommandHandlers\Designations\CreateDesignationCommandHandler.cs" />
+    <Compile Include="CommandHandlers\Designations\DeleteDesignationCommandHandler.cs" />
+    <Compile Include="CommandHandlers\Designations\UpdatedesignationCommandHandler.cs" />
+    <Compile Include="CommandHandlers\Divisions\CreateDivisionCommandHandler.cs" />
+    <Compile Include="CommandHandlers\Divisions\DeleteDivisionCommandHandler.cs" />
+    <Compile Include="CommandHandlers\Divisions\UpdateDivisionCommandHandler.cs" />
+    <Compile Include="CommandHandlers\Employee\EmployeeAddress\CreateEmployeeAddressesCommandHandler.cs" />
+    <Compile Include="CommandHandlers\Employee\EmployeeAddress\DeleteEmployeeAddressesCommandHandler.cs" />
+    <Compile Include="CommandHandlers\Employee\EmployeeAddress\UpdateEmployeeAddressesCommandHandler.cs" />
+    <Compile Include="CommandHandlers\Employee\EmployeeBankAccounts\CreateEmployeeBankAccountsCommandHandler.cs" />
+    <Compile Include="CommandHandlers\Employee\EmployeeBankAccounts\DeleteEmployeeBankAccountsCommandHandler.cs" />
+    <Compile Include="CommandHandlers\Employee\EmployeeBankAccounts\UpdateEmployeeBankAccountsCommandHandler.cs" />
+    <Compile Include="CommandHandlers\Employee\EmployeeContacts\CreateEmployeeContactsCommandHandler.cs" />
+    <Compile Include="CommandHandlers\Employee\EmployeeContacts\DeleteEmployeeContactsCommandHandler.cs" />
+    <Compile Include="CommandHandlers\Employee\EmployeeContacts\UpdateEmployeeContactsCommandHandler.cs" />
+    <Compile Include="CommandHandlers\Employee\Employee\EmployeeFamilyMembers\CreateEmployeeFamilyMembersCommandHandler.cs" />
+    <Compile Include="CommandHandlers\Employee\Employee\EmployeeFamilyMembers\DeleteEmployeeFamilyMembersCommandHandler.cs" />
+    <Compile Include="CommandHandlers\Employee\Employee\EmployeeFamilyMembers\UpdateEmployeeFamilyMembersCommandHandler.cs" />
+    <Compile Include="CommandHandlers\Employee\EmployeeProjects\CreateEmployeeProjectsCommandHandler.cs" />
+    <Compile Include="CommandHandlers\Employee\EmployeeProjects\DeleteEmployeeProjectsCommandHandler.cs" />
+    <Compile Include="CommandHandlers\Employee\EmployeeProjects\UpdateEmployeeProjectsCommandHandler.cs" />
+    <Compile Include="CommandHandlers\Employee\Employee\CreateEmployeeCommandHandler.cs" />
+    <Compile Include="CommandHandlers\Employee\Employee\DeleteEmployeeCommandHandler.cs" />
+    <Compile Include="CommandHandlers\Employee\Employee\UpdateEmployeeCommandHandler.cs" />
+    <Compile Include="CommandHandlers\JobTitle\CreateJobTitleCommandHandler.cs" />
+    <Compile Include="CommandHandlers\JobTitle\DeleteJobTitleCommandHandler.cs" />
+    <Compile Include="CommandHandlers\JobTitle\UpdateJobTitleCommandHandler.cs" />
+    <Compile Include="CommandHandlers\Leave\CreateLeaveTypesCommandHandler.cs" />
+    <Compile Include="CommandHandlers\Leave\DeleteLeaveTypesCommandHandler.cs" />
+    <Compile Include="CommandHandlers\Leave\UpdateLeaveTypesCommandHandler.cs" />
+    <Compile Include="CommandHandlers\Location\CreateLocationCommandHandler.cs" />
+    <Compile Include="CommandHandlers\Location\DeleteLocationCommandHandler.cs" />
+    <Compile Include="CommandHandlers\Location\UpdateLocationCommandHandler.cs" />
+    <Compile Include="CommandHandlers\Organization\CreateOrganizationHandler.cs" />
+    <Compile Include="CommandHandlers\Organization\DeleteOrganizationHandler.cs" />
+    <Compile Include="CommandHandlers\Organization\UpdateOrganizationHandler.cs" />
+    <Compile Include="CommandHandlers\ProjectAssigment\CreateProjectAssignmentCommandHandler.cs" />
+    <Compile Include="CommandHandlers\ProjectAssigment\DeleteAssignmentCommandHandler.cs" />
+    <Compile Include="CommandHandlers\ProjectAssigment\UpdateAssignmentCommandHandler.cs" />
+    <Compile Include="CommandHandlers\Projects\CreateProjectCommandHandler.cs" />
+    <Compile Include="CommandHandlers\Projects\DeleteProjectCommandHandler.cs" />
+    <Compile Include="CommandHandlers\Projects\UpdateProjectCommandHandler.cs" />
+    <Compile Include="CommandHandlers\Timesheet\DeleteTimesheetCommandHandler.cs" />
+    <Compile Include="CommandHandlers\Timesheet\UpdateTimesheetCommandHandler.cs" />
+    <Compile Include="CommandHandlers\User\CreateUserCommandHandler.cs" />
+    <Compile Include="CommandHandlers\User\DeleteUserCommandHandler.cs" />
+    <Compile Include="CommandHandlers\User\UpdateUserCommandHandler.cs" />
+    <Compile Include="Commands\Attendance\CreateAttendanceCommand.cs" />
+    <Compile Include="Commands\Attendance\DeleteAttendanceCommand.cs" />
+    <Compile Include="Commands\Attendance\UpdateAttendanceCommand.cs" />
+    <Compile Include="Commands\Company\CreateCompanyCommand.cs" />
+    <Compile Include="Commands\Company\DeleteCompanyCommand.cs" />
+    <Compile Include="Commands\Company\UpdateCompanyCommand.cs" />
+    <Compile Include="Commands\Contingent\CreateContingentCommand.cs" />
+    <Compile Include="Commands\Contingent\DeleteContingentCommand.cs" />
+    <Compile Include="Commands\Contingent\UpdateContingentCommand.cs" />
+    <Compile Include="Commands\HelpDesk\CreateHelpdeskTicketCommand.cs" />
+    <Compile Include="Commands\HelpDesk\DeleteHelpdeskTicketCommand.cs" />
+    <Compile Include="Commands\HelpDesk\UpdateHelpdeskTicketCommand.cs" />
+    <Compile Include="Commands\PayrollDeduction\CreatePayrollDeductionCommand.cs" />
+    <Compile Include="Commands\PayrollDeduction\DeletePayrollDeductionCommand.cs" />
+    <Compile Include="Commands\PayrollDeduction\UpdatePayrollDeductionCommand.cs" />
+    <Compile Include="Commands\PayrollWages\CreatePayrollWagesCommand.cs" />
+    <Compile Include="Commands\PayrollWages\DeletePayrollWagesCommand.cs" />
+    <Compile Include="Commands\PayrollWages\UpdatePayrollWagesCommand.cs" />
+    <Compile Include="Commands\Payroll\CreatePayrollCommand.cs" />
+    <Compile Include="Commands\Payroll\DeletePayrollCommand.cs" />
+    <Compile Include="Commands\Payroll\UpdatePayrollCommand.cs" />
+    <Compile Include="Commands\PayslipHistory\CreatePayslipHistoryCommand.cs" />
+    <Compile Include="Commands\PayslipHistory\DeletePayslipHistoryCommand.cs" />
+    <Compile Include="Commands\PayslipHistory\UpdatePayslipHistoryCommand.cs" />
+    <Compile Include="Commands\RolePermission\CreateRolePermissionCommand.cs" />
+    <Compile Include="Commands\RolePermission\DeleteRolePermissionCommand.cs" />
+    <Compile Include="Commands\RolePermission\UpdateRolePermissionCommand.cs" />
+    <Compile Include="Commands\Roles\CreateRoleCommand.cs" />
+    <Compile Include="Commands\Roles\DeleteRoleCommand.cs" />
+    <Compile Include="Commands\Roles\UpdateRoleCommand.cs" />
+    <Compile Include="Commands\User\CreateUserCommand.cs" />
+    <Compile Include="Commands\JobTitle\CreateJobTitleCommand.cs" />
+    <Compile Include="Commands\Departments\CreateDepartmentCommand.cs" />
+    <Compile Include="Commands\Departments\DeleteDepartmentCommand.cs" />
+    <Compile Include="Commands\Departments\UpdateDepartmentCommand.cs" />
+    <Compile Include="Commands\Designations\CreateDesignationCommand.cs" />
+    <Compile Include="Commands\Designations\DeleteDesignationCommand.cs" />
+    <Compile Include="Commands\Designations\UpdateDesignationCommand.cs" />
+    <Compile Include="Commands\Divisions\CreateDivisionCommand.cs" />
+    <Compile Include="Commands\Divisions\DeleteDivisionCommand.cs" />
+    <Compile Include="Commands\Divisions\UpdateDivisionCommand.cs" />
+    <Compile Include="Commands\Employee\EmployeeAdresses\CreateEmployeeAddressesCommand.cs" />
+    <Compile Include="Commands\Employee\EmployeeAdresses\DeleteEmployeeAddressesCommand.cs" />
+    <Compile Include="Commands\Employee\EmployeeAdresses\UpdateEmployeeAddressesCommand.cs" />
+    <Compile Include="Commands\Employee\EmployeeBankAccount\CreateEmployeeBankAccountsCommand.cs" />
+    <Compile Include="Commands\Employee\EmployeeBankAccount\DeleteEmployeeBankAccountsCommand.cs" />
+    <Compile Include="Commands\Employee\EmployeeBankAccount\UpdateEmployeeBankAccountsCommand.cs" />
+    <Compile Include="Commands\Employee\EmployeeContacts\CreateEmployeeContactsCommand.cs" />
+    <Compile Include="Commands\Employee\EmployeeContacts\DeleteEmployeeContactsCommand.cs" />
+    <Compile Include="Commands\Employee\EmployeeContacts\UpdateEmployeeContactsCommand.cs" />
+    <Compile Include="Commands\Employee\EmployeeFamilyMember\CreateEmployeeFamilyMemberCommand.cs" />
+    <Compile Include="Commands\Employee\EmployeeFamilyMember\DeleteEmployeeFamilyMembersCommand.cs" />
+    <Compile Include="Commands\Employee\EmployeeFamilyMember\UpdateEmployeeFamilyMembersCommand.cs" />
+    <Compile Include="Commands\Employee\EmployeeProjects\CreateEmployeeProjectsCommand.cs" />
+    <Compile Include="Commands\Employee\EmployeeProjects\DeleteEmployeeProjectsCommand.cs" />
+    <Compile Include="Commands\Employee\EmployeeProjects\UpdateEmployeeProjectsCommand.cs" />
+    <Compile Include="Commands\Employee\Employee\CreateEmployeeCommand.cs" />
+    <Compile Include="Commands\Employee\Employee\DeleteEmployeeCommand.cs" />
+    <Compile Include="Commands\Employee\Employee\UpdateEmployeeCommand.cs" />
+    <Compile Include="Commands\JobTitle\DeleteJobTitleCommand.cs" />
+    <Compile Include="Commands\JobTitle\UpdateJobTitleCommand.cs" />
+    <Compile Include="Commands\Leave\CreateLeaveTypesCommand.cs" />
+    <Compile Include="Commands\Leave\DeleteLeaveTypesCommand.cs" />
+    <Compile Include="Commands\Leave\UpdateLeaveTypesCommand.cs" />
+    <Compile Include="Commands\Location\CreateLocationCommand.cs" />
+    <Compile Include="Commands\Location\DeleteLocationCommand.cs" />
+    <Compile Include="Commands\Location\UpdateLocationCommand.cs" />
+    <Compile Include="Commands\Organization\CreateorganizationCommand.cs" />
+    <Compile Include="Commands\Organization\DeleteOrganizationCommand.cs" />
+    <Compile Include="Commands\Organization\UpdateOrganizationCommand.cs" />
+    <Compile Include="Commands\ProjectAssigment\CreateProjectAssignmentCommand.cs" />
+    <Compile Include="Commands\ProjectAssigment\DeleteAssignmentCommand.cs" />
+    <Compile Include="Commands\ProjectAssigment\UpdateAssignmentCommand.cs" />
+    <Compile Include="Commands\Projects\CreateProjectCommand.cs" />
+    <Compile Include="Commands\Projects\DeleteProjectCommand.cs" />
+    <Compile Include="Commands\Projects\UpdateProjectCommand.cs" />
+    <Compile Include="Commands\Timesheet\CreateTimesheetCommand.cs" />
+    <Compile Include="Commands\Timesheet\DeleteTimesheetCommand.cs" />
+    <Compile Include="Commands\Timesheet\UpdateTimesheetCommand.cs" />
+    <Compile Include="Commands\User\DeleteUserCommand.cs" />
+    <Compile Include="Commands\User\UpdateUserCommand.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Queries\Attendance\GetAllAttendanceByEmpIdQuery.cs" />
+    <Compile Include="Queries\Attendance\GetAttendanceByIdQuery.cs" />
+    <Compile Include="Queries\Company\GetCompaniesByDivIdQuery.cs" />
+    <Compile Include="Queries\Company\GetCompaniesByOrgIdQuery.cs" />
+    <Compile Include="Queries\Company\GetCompanyByIdQuery.cs" />
+    <Compile Include="Queries\Contingent\GetAllContingentByOrgIdQuery.cs" />
+    <Compile Include="Queries\Contingent\GetContingentByIdQuery.cs" />
+    <Compile Include="Queries\Departments\GetDepartmentByCompanyIdQuery.cs" />
+    <Compile Include="Queries\Departments\GetDepartmentByIdQuery.cs" />
+    <Compile Include="Queries\Designations\GetDesignationByDepartmentIdQuery.cs" />
+    <Compile Include="Queries\Designations\GetDesignationByIdQuery.cs" />
+    <Compile Include="Queries\Divisions\GetAllDivisionByIdQuery.cs" />
+    <Compile Include="Queries\Divisions\GetDivisionByIdQuery.cs" />
+    <Compile Include="Queries\Employee\EmployeeAddresses\GetEmployeeAddressesByIdQuery.cs" />
+    <Compile Include="Queries\Employee\EmployeeAddresses\GetAllAddressesByEmployeeIdQuery.cs" />
+    <Compile Include="Queries\Employee\EmployeeBankAccounts\GetAllEmployeeBankAccountsByIdQuery.cs" />
+    <Compile Include="Queries\Employee\EmployeeBankAccounts\GetEmployeeBankAccountsByIdQuery.cs" />
+    <Compile Include="Queries\Employee\EmployeeContacts\GetAllContactsByEmployeeIdQuery.cs" />
+    <Compile Include="Queries\Employee\EmployeeContacts\GetEmployeeContactByIdQuery.cs" />
+    <Compile Include="Queries\Employee\EmployeeFamilyMembers\GetAllEmployeeFamilyMembersByIdQuery.cs" />
+    <Compile Include="Queries\Employee\EmployeeFamilyMembers\GetEmployeeFamilyMembersByIdQuery.cs" />
+    <Compile Include="Queries\Employee\EmployeeProjects\GetAllEmployeeProjectsByIdQuery.cs" />
+    <Compile Include="Queries\Employee\EmployeeProjects\GetEmployeeProjectsByIdQuery.cs" />
+    <Compile Include="Queries\Employee\Employee\GetAllEmployeeByCompanyQuery.cs" />
+    <Compile Include="Queries\Employee\Employee\GetAllEmployeeByDivisionQuery.cs" />
+    <Compile Include="Queries\Employee\Employee\GetAllEmployeeByOrgnizationQuery.cs" />
+    <Compile Include="Queries\Employee\Employee\GetEmployeeByIdQuery.cs" />
+    <Compile Include="Queries\HelpDesk\GetAllHelpdeskTicketByEmpIdQuery.cs" />
+    <Compile Include="Queries\HelpDesk\GetAllHelpdeskTicketByOrgIdQuery.cs" />
+    <Compile Include="Queries\HelpDesk\GetHelpdeskTicketByIdQuery.cs" />
+    <Compile Include="Queries\JobTitle\GetJobTitleByCompanyIdQuery.cs" />
+    <Compile Include="Queries\JobTitle\GetJobTitleByIdQuery.cs" />
+    <Compile Include="Queries\Leave\GetAllLeaveTypesQuery.cs" />
+    <Compile Include="Queries\Leave\GetLeaveTypesByIdQuery.cs" />
+    <Compile Include="Queries\Location\GetAllLocationsByOrgIdQuery.cs" />
+    <Compile Include="Queries\Location\GetLocationByIdQuery.cs" />
+    <Compile Include="Queries\Organization\GetOrganizationByIdQuery.cs" />
+    <Compile Include="Queries\PayrollDeduction\GetAllPayrollDeductionByPayrollIdQuery.cs" />
+    <Compile Include="Queries\PayrollDeduction\GetPayrollDeductionByIdQuery.cs" />
+    <Compile Include="Queries\PayrollWages\GetPayrollWagesByEmpIdQuery.cs" />
+    <Compile Include="Queries\PayrollWages\GetPayrollWagesByIdQuery.cs" />
+    <Compile Include="Queries\PayrollWages\GetPayrollWagesByPayrollIdQuery.cs" />
+    <Compile Include="Queries\Payroll\GetPayrollByIdQuery.cs" />
+    <Compile Include="Queries\Payroll\GetPayrollsByComIdQuery.cs" />
+    <Compile Include="Queries\Payroll\GetPayrollsByOrgIdQuery.cs" />
+    <Compile Include="Queries\PayslipHistory\GetAllPayslipHistoryByEmpIdQuery.cs" />
+    <Compile Include="Queries\PayslipHistory\GetPayslipHistoryByIdQuery.cs" />
+    <Compile Include="Queries\ProjectAssigment\GetProjectAssignmentByIdQuery.cs" />
+    <Compile Include="Queries\Projects\GetAllProjectByCompanyIdQuery.cs" />
+    <Compile Include="Queries\Projects\GetAllProjectByDivisionIdQuery.cs" />
+    <Compile Include="Queries\Projects\GetAllProjectsByOrganizationIdQuery.cs" />
+    <Compile Include="Queries\Projects\GetProjectByIdQuery.cs" />
+    <Compile Include="Queries\RolePermission\GetPermissionsByRoleIdQuery.cs" />
+    <Compile Include="Queries\RolePermission\GetRolePermissionByIdQuery.cs" />
+    <Compile Include="Queries\Roles\GetAllRolesByOrganizationQuery.cs" />
+    <Compile Include="Queries\Roles\GetRoleByIdQuery.cs" />
+    <Compile Include="Queries\Timesheet\GetAllTimesheetByEmpIdQuery.cs" />
+    <Compile Include="Queries\Timesheet\GetTimesheetByIdQuery.cs" />
+    <Compile Include="Queries\User\GetUserByIdQuery.cs" />
+    <Compile Include="QueryHandlers\Attendance\GetAllAttendanceByEmpIdQueryHandler.cs" />
+    <Compile Include="QueryHandlers\Attendance\GetAttendanceByIdQueryHandler.cs" />
+    <Compile Include="QueryHandlers\Company\GetCompaniesByDivIdQueryHandler.cs" />
+    <Compile Include="QueryHandlers\Company\GetCompaniesByOrgIdQueryHandler.cs" />
+    <Compile Include="QueryHandlers\Company\GetCompanyByIdQueryHandler.cs" />
+    <Compile Include="QueryHandlers\Contingent\GetAllContingentByOrgIdQueryHandler.cs" />
+    <Compile Include="QueryHandlers\Contingent\GetContingentByIdQueryHandler.cs" />
+    <Compile Include="QueryHandlers\Departments\GetDepartmantsByCompanyIdQueryHandler.cs" />
+    <Compile Include="QueryHandlers\Departments\GetDepartmentByIdQueryHandler.cs" />
+    <Compile Include="QueryHandlers\Designations\GetDesignationByCompanyIdQueryHandler.cs" />
+    <Compile Include="QueryHandlers\Designations\GetDesignationByIdQueryHandler.cs" />
+    <Compile Include="QueryHandlers\Divisions\GetAllDivisionByIdQueryHandler.cs" />
+    <Compile Include="QueryHandlers\Divisions\GetDivisionByIdQueryHandler.cs" />
+    <Compile Include="QueryHandlers\Employee\Employeeaddresses\GetEmployeesAddressesByIdQueryHandler.cs" />
+    <Compile Include="QueryHandlers\Employee\EmployeeBankAccounts\GetAllEmployeesBankAccountsQueryHandler.cs" />
+    <Compile Include="QueryHandlers\Employee\EmployeeBankAccounts\GetEmployeesBankAccountsQueryHandler.cs" />
+    <Compile Include="QueryHandlers\Employee\EmployeeContacts\GetAllEmployeeContactsByIdQueryHandler.cs" />
+    <Compile Include="QueryHandlers\Employee\EmployeeContacts\GetEmployeesContactsByIdQueryHandler.cs" />
+    <Compile Include="QueryHandlers\Employee\EmployeeFamilyMembers\GetAllEmployeeFamilyMembersByIdQueryHandler.cs" />
+    <Compile Include="QueryHandlers\Employee\EmployeeFamilyMembers\GetEmployeeFamilyMembersByIdQueryHandler.cs" />
+    <Compile Include="QueryHandlers\Employee\EmployeeProjects\GetAllEmployeeProjectsByIdQueryHandler.cs" />
+    <Compile Include="QueryHandlers\Employee\EmployeeProjects\GetEmployeeProjectsByIdQueryHandler.cs" />
+    <Compile Include="QueryHandlers\Employee\Employee\GetAllEmployeesByCompanyQueryHandler.cs" />
+    <Compile Include="QueryHandlers\Employee\Employee\GetAllEmployeesByDivisionQueryHandler.cs" />
+    <Compile Include="QueryHandlers\Employee\Employee\GetAllEmployeesByOrganizationQueryHandler.cs" />
+    <Compile Include="QueryHandlers\Employee\Employee\GetEmployeeByIdQueryHandler.cs" />
+    <Compile Include="QueryHandlers\Employee\Employeeaddresses\GetEmployeeIdByAddressesQueryHandler.cs" />
+    <Compile Include="Queries\Location\GetAllLocationsByDivIdQuery.cs" />
+    <Compile Include="QueryHandlers\HelpDesk\GetAllHelpdeskTicketByEmpIdQueryHandler.cs" />
+    <Compile Include="QueryHandlers\HelpDesk\GetAllHelpdeskTicketByOrgIdQueryHandler.cs" />
+    <Compile Include="QueryHandlers\HelpDesk\GetHelpdeskTicketByIdQueryHandler.cs" />
+    <Compile Include="QueryHandlers\PayrollDeduction\GetAllPayrollDeductionByPayrollIdQueryHandler.cs" />
+    <Compile Include="QueryHandlers\PayrollDeduction\GetPayrollDeductionByIdQueryHandler.cs" />
+    <Compile Include="QueryHandlers\PayrollWages\GetPayrollWagesByEmpIdQueryHandler.cs" />
+    <Compile Include="QueryHandlers\PayrollWages\GetPayrollWagesByIdQueryHandler.cs" />
+    <Compile Include="QueryHandlers\PayrollWages\GetPayrollWagesByPayrollIdQueryHandler.cs" />
+    <Compile Include="QueryHandlers\Payroll\GetPayrollByIdQueryHandler.cs" />
+    <Compile Include="QueryHandlers\Payroll\GetPayrollsByComIdQueryHandler.cs" />
+    <Compile Include="QueryHandlers\Payroll\GetPayrollsByOrgIdQueryHandler.cs" />
+    <Compile Include="QueryHandlers\PayslipHistory\GetAllPayslipHistoryByEmpIdQueryHandler.cs" />
+    <Compile Include="QueryHandlers\PayslipHistory\GetPayslipHistoryByIdQueryHandler.cs" />
+    <Compile Include="QueryHandlers\RolePermission\GetPermissionsByRoleIdQueryHandler.cs" />
+    <Compile Include="QueryHandlers\RolePermission\GetRolePermissionByIdQueryHandler.cs" />
+    <Compile Include="QueryHandlers\Roles\GetAllRolesByOrganizationQueryHandler.cs" />
+    <Compile Include="QueryHandlers\Roles\GetRoleByIdQueryHandler.cs" />
+    <Compile Include="QueryHandlers\Timesheet\GetAllTimesheetByEmpIdQueryHandler.cs" />
+    <Compile Include="QueryHandlers\Leave\GetAllLeaveTypesQueryHandler.cs" />
+    <Compile Include="QueryHandlers\Leave\GetLeaveTypesQueryHandler.cs" />
+    <Compile Include="QueryHandlers\Location\GetAllLocationsByDivIdQueryHandler.cs" />
+    <Compile Include="QueryHandlers\Location\GetAllLocationsByOrgIdQueryHandler.cs" />
+    <Compile Include="QueryHandlers\JobTitle\GetJobTitleByCompanyIdQueryHandler.cs" />
+    <Compile Include="QueryHandlers\JobTitle\GetJobTitleByIdQueryHandler.cs" />
+    <Compile Include="QueryHandlers\Location\GetLocationByIdQueryHandler.cs" />
+    <Compile Include="QueryHandlers\Organization\GetOrganizationByIdHandler.cs" />
+    <Compile Include="Queries\ProjectAssigment\GetAllProjectAssignmentByEmpIdQuery.cs" />
+    <Compile Include="QueryHandlers\ProjectAssigment\GetAllProjectAssignmentByEmpIdQueryHandler.cs" />
+    <Compile Include="QueryHandlers\ProjectAssigment\GetProjectAssignmentByIdQueryHandler.cs" />
+    <Compile Include="QueryHandlers\Projects\GetAllProjectByCompanyIdQueryHandler.cs" />
+    <Compile Include="QueryHandlers\Projects\GetAllProjectByDivisionIdQueryHandler.cs" />
+    <Compile Include="QueryHandlers\Projects\GetAllProjectsByOrganizationIdQueryHandler.cs" />
+    <Compile Include="QueryHandlers\Projects\GetProjectByIdQueryHandler.cs" />
+    <Compile Include="QueryHandlers\Timesheet\GetTimesheetByIdQueryHandler.cs" />
+    <Compile Include="Queries\User\GetAllUsersQueryByOrg.cs" />
+    <Compile Include="QueryHandlers\User\GetAllUsersQueryByOrgHandler.cs" />
+    <Compile Include="QueryHandlers\User\GetUserByIdQueryHandler.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\HRMS.Domain\HRMS.Domain.csproj">
+      <Project>{0E9CEE33-932A-4B36-91B2-A58620E9C1E3}</Project>
+      <Name>HRMS.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HRMS.Infrastructure\HRMS.Infrastructure.csproj">
+      <Project>{7DC7B977-A4E3-4186-A8FE-4A3AC636B753}</Project>
+      <Name>HRMS.Infrastructure</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="CommandHandlers\HelpDeskComments\" />
+    <Folder Include="Commands\HelpDeskComments\" />
+    <Folder Include="Queries\HelpDeskComments\" />
+    <Folder Include="QueryHandlers\HelpDeskComments\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
