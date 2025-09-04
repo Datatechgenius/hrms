@@ -109,6 +109,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CommandHandlers\Asset\CreateAssetCommandHandler.cs" />
+    <Compile Include="CommandHandlers\Asset\DeleteAssetCommandHandler.cs" />
+    <Compile Include="CommandHandlers\Asset\UpdateAssetCommandHandler.cs" />
     <Compile Include="CommandHandlers\Attendance\CreateAttendanceCommandHandler.cs" />
     <Compile Include="CommandHandlers\Attendance\DeleteAttendanceCommandHandler.cs" />
     <Compile Include="CommandHandlers\Attendance\UpdateAttendanceCommandHandler.cs" />
@@ -192,6 +195,9 @@
     <Compile Include="CommandHandlers\User\CreateUserCommandHandler.cs" />
     <Compile Include="CommandHandlers\User\DeleteUserCommandHandler.cs" />
     <Compile Include="CommandHandlers\User\UpdateUserCommandHandler.cs" />
+    <Compile Include="Commands\Asset\CreateAssetCommand.cs" />
+    <Compile Include="Commands\Asset\DeleteAssetCommand.cs" />
+    <Compile Include="Commands\Asset\UpdateAssetCommand.cs" />
     <Compile Include="Commands\Attendance\CreateAttendanceCommand.cs" />
     <Compile Include="Commands\Attendance\DeleteAttendanceCommand.cs" />
     <Compile Include="Commands\Attendance\UpdateAttendanceCommand.cs" />
@@ -276,6 +282,8 @@
     <Compile Include="Commands\User\DeleteUserCommand.cs" />
     <Compile Include="Commands\User\UpdateUserCommand.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Queries\Asset\GetAllAssetByOrgIdQuery.cs" />
+    <Compile Include="Queries\Asset\GetAssetByIdQuery.cs" />
     <Compile Include="Queries\Attendance\GetAllAttendanceByEmpIdQuery.cs" />
     <Compile Include="Queries\Attendance\GetAttendanceByIdQuery.cs" />
     <Compile Include="Queries\Company\GetCompaniesByDivIdQuery.cs" />
@@ -337,6 +345,8 @@
     <Compile Include="Queries\Timesheet\GetAllTimesheetByEmpIdQuery.cs" />
     <Compile Include="Queries\Timesheet\GetTimesheetByIdQuery.cs" />
     <Compile Include="Queries\User\GetUserByIdQuery.cs" />
+    <Compile Include="QueryHandlers\Asset\GetAllAssetByOrgIdQueryHandler.cs" />
+    <Compile Include="QueryHandlers\Asset\GetAssetByIdQueryHandler.cs" />
     <Compile Include="QueryHandlers\Attendance\GetAllAttendanceByEmpIdQueryHandler.cs" />
     <Compile Include="QueryHandlers\Attendance\GetAttendanceByIdQueryHandler.cs" />
     <Compile Include="QueryHandlers\Company\GetCompaniesByDivIdQueryHandler.cs" />

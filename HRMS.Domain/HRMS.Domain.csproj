@@ -42,6 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Entities\Asset\AssetModel.cs" />
     <Compile Include="Entities\Attendance\AttendanceModel.cs" />
     <Compile Include="Entities\Company\CompanyModel.cs" />
     <Compile Include="Entities\Contingent\Contingent.cs" />
